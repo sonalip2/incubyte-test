@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String calculator</title>
+    <script src="/stringCalculator.js"></script>
+</head>
+<body>
+    <form method="POST" onsubmit="handleSubmit()" action="javascript:void(0);">
+        <input name="numberString" id="numberString"></input>
+        <button type="submit">Submit</button>
+        <span id="showValue"></span>
+    </form>
+    <script type="text/javascript">
+        function handleSubmit() {
+            const input = document.getElementById("numberString");
+            const numberString = input.value;
+            input.value = ""
+            console.log("numberString", stringCalculator(numberString))
+            const showValueEle = document.getElementById("showValue")
+            showValueEle.innerHTML = stringCalculator(numberString)
+        }
+    </script>
+</body>
+</html>
